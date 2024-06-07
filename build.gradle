@@ -12,8 +12,16 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.2'
+    implementation 'org.jsoup:jsoup:1.14.3'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 test {
     useJUnitPlatform()
 }
+
+task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+}
+
